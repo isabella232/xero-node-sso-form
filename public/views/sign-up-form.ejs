@@ -1,0 +1,24 @@
+<form action="/sign-up" method="POST">
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="<%= user.email %>">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input name="firstName" type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First Name" value="<%= user.firstName %>">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input name="lastName" type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" placeholder="Last Name" value="<%= user.lastName %>">
+    </div>
+
+    <div class="form-group">
+        <label for="more-info">More Information</label>
+        <textarea name="moreInfo" class="form-control" id="info" aria-describedby="more-info" placeholder="More Info"><%= user.moreInfo %></textarea>
+        <small id="more-info" class="form-text text-muted">Have a specific enquiry? These details will be provided to our pre-sales team to facilitate your registration.</small>
+    </div>
+    <button type="submit" class="btn btn-primary float-right">Update</button>
+</form>

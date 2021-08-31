@@ -1,0 +1,31 @@
+<html lang="en">
+  <%- include('./head') -%>
+  <body>
+    <%- include('./logo-header') -%>
+
+    <section id="key-benefit">
+      <div class="container">
+        <div class="jumbotron xlp-jumbotron" style="padding-top: 30px;">
+          <div class="xlp-jumbotron-text text-center">
+            <p>Logoipsum is an example of <a target='_blank' href='https://developer.xero.com/documentation/guides/oauth2/sign-up#modified-flow'>XeroAPI Sign Up to Lead</a> functionality.<hr><strong><i style='color: red; font-size: 13px;'>The <a target="_blank" href='https://github.com/xeroapi/xero-node-sso-form'>app's code</a> will not create, update any data within your Xero account.</i></strong></p>
+            <hr>
+            <br>
+            <div class="row text-center">
+              <div class='col-md-6'>
+                <img src="/images/callback-flow.png" class="img-fluid" alt="app-logo"/>
+              </div>
+              <div class='col-md-6'>
+                <p class="lead" style="margin-top: 50px;">
+                  Sign up using your Xero account<br>
+                </p>
+                <span style="margin: 0 auto; margin-top: 30px;" data-xero-sso data-theme="dark" data-href='<%= authorizeUrl %>' data-size="large" data-height="60" data-label="Sign in with Xero"></span>
+                <script src="https://edge.xero.com/platform/sso/xero-sso.js" async defer></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+

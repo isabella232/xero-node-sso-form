@@ -1,0 +1,32 @@
+<html lang="en">
+  <%- include('./head') -%>
+  <body>
+    <%- include('./logo-header') -%>
+
+    <section id="key-benefit">
+      <div class="container">
+        <div class="jumbotron xlp-jumbotron" style="padding-top: 30px;">
+          <div class="xlp-jumbotron-text text-center">
+            <p>Thank you for signing up, you can modify your registration details below.</p>
+            <% if (message) { %>
+              <p><%= message %></p>
+            <% } %>
+            <hr>
+            <br>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+              <%- include('./sign-up-form') -%>
+            </div>
+          </div>
+          
+          <div class="float-right">
+            <a href='/logout'>Logout</a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
