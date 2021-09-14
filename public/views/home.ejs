@@ -12,14 +12,24 @@
             <br>
             <div class="row text-center">
               <div class='col-md-6'>
-                <img src="/images/callback-flow.png" class="img-fluid" alt="app-logo"/>
+                <h3>Demo Overview</h3>
+                <p>The user will authorise an idenity token through the OAuth flow, which is utilised to pre-populate a sign up form</p>
+                
+                <p><strong>Note:</strong> The current page is for explaining the demo only, it would never be seen by the user.</p>
+                
+                <img id="callback-flow-image" src="/images/callback-flow.png" class="img-fluid" alt="app-logo"/>
+                
               </div>
               <div class='col-md-6'>
-                <p class="lead" style="margin-top: 50px;">
-                  Sign up using your Xero account<br>
-                </p>
-                <span style="margin: 0 auto; margin-top: 30px;" data-xero-sso data-theme="dark" data-href='<%= authorizeUrl %>' data-size="large" data-height="60" data-label="Sign in with Xero"></span>
-                <script src="https://edge.xero.com/platform/sso/xero-sso.js" async defer></script>
+                <img id="app-store-image" src="/images/xero-app-store-sign-in-demo.png" class="img-fluid" alt="xero-app-store-demo" />
+                <h3>Demo Use Case</h3>
+                <p>An App Partner provides the URL presented below as their <i>"Sign up with Xero" URL</i>.</p>
+                <p>The Xero user clicks the <i>"Get this app using Xero Sign in" button</i> in the Xero App Store.</p>
+                <p>The Xero user is redirected to the <i>"Sign up with Xero" URL</i> as provided by the App Partner.</p>
+                <p>The App Partner then generates an 'AuthoriseUrl' and redirects the user to it, sending the user through the Xero OAuth flow</p>
+                <p>Post-Authorisation the user is redirected to the <i>OAuth Callback URI</i>, where the App Partner can pre-populate a sign up form and present it to the user.</p>
+                <p>Enter the <i>"Sign up with Xero" URL</i> in your browser to try out the demo, and <a href="https://github.com/XeroAPI/xero-node-sso-form" target="_blank">read the code to understand what is happening</a>.</p>
+                <label style="font-weight: bold;">"Sign up with Xero" URL</label> <input size="32" type="text" value="http://localhost:5000/xero/sign-up">
               </div>
             </div>
           </div>

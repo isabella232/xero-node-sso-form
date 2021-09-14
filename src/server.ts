@@ -74,22 +74,21 @@ class App {
     const router = express.Router();
     
     router.get("/", async (req: Request, res: Response) => {
-      if(req.signedCookies.recentSession) {
-        try {
-          const user = await findUserWithSession(req.signedCookies.recentSession);
-
-          if (user) {
-            res.redirect("/sign-up");
-          }
-        } catch (e) {
-          res.render("shared/error", {
-            error: e
-          });
-        }
-      }
       res.render("home", { 
         authorizeUrl: await xero.buildConsentUrl()
       });
+    });
+
+    /*
+      This is the url that will be provided to the Xero App Store '/xero/sign-up'
+      You can rename the route as desired.
+      From this route the user should be immediately redirected into the OAuth flow
+      From the users perspective they will click through from the Xero App Store, Authorise with Xero & then arrive
+      at the App Partners website via the callback URL and be presented with a pre-populated sign up form.
+    */
+    router.get("/xero/sign-up", async(req: Request, res: Response) => {
+      const authorizeUrl = await xero.buildConsentUrl()
+      res.redirect(authorizeUrl)
     });
 
     router.get("/callback", async (req: Request, res: Response) => {
@@ -164,7 +163,7 @@ class App {
         try {
           const user = await findUserWithSession(req.signedCookies.recentSession);
 
-          // need to sanitize & escape
+          // need to sanitize & escape user input
 
           user.moreInfo = req.body.moreInfo
           await user.save()

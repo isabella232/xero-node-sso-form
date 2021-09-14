@@ -22,3 +22,7 @@ body {
   max-width: 275px;
   letter-spacing: 1px;
 }
+
+#key-benefit img {
+  margin-bottom: 20px;
+}
