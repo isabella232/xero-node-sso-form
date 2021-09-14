@@ -3,6 +3,8 @@ import User from './user'
 
 var sequelize = null
 
+// use postgres in production, or dev if setup in .env
+// otherwise, use
 if (process.env.DATABASE_URL) {
   // the application is executed on Heroku ... use the postgres database
   sequelize = new Sequelize(process.env.DATABASE_URL, {
@@ -16,7 +18,8 @@ if (process.env.DATABASE_URL) {
       }
     }   
   });
-} else {
+} else if (process.env.DATABASE) {
+  // Use postgres if a database name is specified
   sequelize = new Sequelize(
     process.env.DATABASE,
     process.env.DATABASE_USER,
@@ -25,6 +28,8 @@ if (process.env.DATABASE_URL) {
       dialect: 'postgres',
     },
   );
+} else {
+  sequelize = new Sequelize('sqlite::memory:');
 }
  
 const models = {

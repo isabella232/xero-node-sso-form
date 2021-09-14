@@ -23,8 +23,9 @@
     "jwt-decode": "^2.2.0",
     "nodemon": "^2.0.4",
     "pg": "^8.4.0",
-    "sequelize": "^6.3.5",
-    "xero-node": "^4.7.4"
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2",
+    "xero-node": "^4.15.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
