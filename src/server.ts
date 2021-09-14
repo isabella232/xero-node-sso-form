@@ -26,7 +26,7 @@ const xero = new XeroClient({
 });
 
 if (!client_id || !client_secret || !redirectUrl) {
-  throw Error('Environment Variables not all set - please check your .env file in the project root or create one!')
+  throw Error('Environment Variables not all set - please check your .env file in the project root or create one based on the sample.env!')
 }
 
 function findUserWithSession(session: string) {
