@@ -5,7 +5,7 @@ This sample project is an implementation of the OAuth 2, [Modified Sign Up with 
 
 <!-- # <a href="https://xero-ssu.herokuapp.com" target="_blank">Hosted Demo of SSU to Lead</a> -->
 
-![Xero Sign Up to Lead Demo Application](https://raw.githubusercontent.com/XeroAPI/xero-node-ssu-form/main/public/images/ssu-demo-screenshot.png)
+![Xero Sign Up to Lead Demo Application](https://raw.githubusercontent.com/XeroAPI/xero-node-sso-form/main/public/images/ssu-demo-screenshot.png)
 
 ---
 # Code Walkthrough
