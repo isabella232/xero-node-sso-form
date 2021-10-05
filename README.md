@@ -31,6 +31,8 @@ Note: These scopes to do NOT authorise API access, they ONLY request identity de
 
 In the same route that matches the authorization url and the app settings in your [Xero App Dashboard](https://developer.xero.com/myapps/), you will need to catch the authorization flow temporary code and exchange for `token_set`
 
+Callback URL: `<CALLBACK_URI>?code=ASDADSADASDASD&scope=openid%20profile%20email`
+
 In this example we are using the [xero-node SDK](https://github.com/XeroAPI/xero-node) which has a helper to do this exchange.
 ```javascript
 const tokenSet = await xero.apiCallback(responseUrl);
@@ -60,6 +62,8 @@ const userParams = {
 
 ---
 #### 4. **Create User**
+
+**Optional:** This step is optional.  You could save the user data to a temporary session / cookie, rather than a database.  You could also simply pre-populate the form with the user data, and save it only upon submission of the form.
 
 Now that we have verified user data out of our `id_token` we can lookup to see if that user already exists or not. If they do, we update any incoming data like a name change, and if not we create a new user record in our database and log them, setting a secure signed cookie variable that will persist for the sign up period.
 ```javascript
